@@ -1,34 +1,33 @@
-class A {
-    public A() {
-        super();
-        System.out.println("in A");
-    }
+abstract class Car {
+    public abstract void drive();
 
-    public A(int n) {
-        super();
-        System.out.println("in A int");
+    public abstract void fly();
+
+    public void playMusic() {
+        System.out.println("play music");
     }
 }
 
-class B extends A {
-    public B() {
-        // super();
-        super(5);
-        System.out.println("in B");
+abstract class WagnoR extends Car {
+    public void drive() {
+        System.out.println("Driving...");
     }
+}
 
-    public B(int n) {
-        // super(); //call default constructor of super class
-        // this(); //call constructor of same class
-        super(n);
-        System.out.println("in B int");
+class UpdateWagnoR extends WagnoR // concrete class
+{
+    public void fly() {
+        System.out.println("flying...");
     }
 }
 
 public class Hello {
     public static void main(String[] args) {
 
-        B obj = new B();
-        // B obj=new B(5);
+        // Car obj= new Car(); // can not create object of abstract classes
+        // Car obj= new WagnoR();
+        Car obj = new UpdateWagnoR();
+        obj.drive();
+        obj.playMusic();
     }
 }
