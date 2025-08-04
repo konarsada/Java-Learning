@@ -2,10 +2,6 @@
 
 abstract class Computer
 {
-//	public void code()
-//	{
-//		
-//	}
 	public abstract void code();
 }
 
@@ -27,7 +23,6 @@ class Desktop extends Computer
 }
 class Developer
 {
-//	public void devApp(Laptop lap)
 	public void devApp(Computer lap)
 	{
 		lap.code();
@@ -36,20 +31,22 @@ class Developer
 
 public class Demo {
     public static void main(String[] args) {
-//        Laptop lap=new Laptop();
-//        Desktop desk=new Desktop();
-        
         Computer lap=new Laptop();
         Computer desk=new Desktop();
         
         Developer navin=new Developer();
         navin.devApp(lap);
-        
     }
 }
 */
 
 interface Computer {
+    // interface is not a class
+
+    // every variable in interface is final and static
+    int age = 20;
+
+    // in an interface all methods are by default public abstract
     void code();
 }
 
@@ -75,11 +72,10 @@ class Developer {
 
 public class Interface {
     public static void main(String[] args) {
-        // Laptop lap=new Laptop();
-        // Desktop desk=new Desktop();
-
         Computer lap = new Laptop();
         Computer desk = new Desktop();
+
+        System.out.println(Computer.age);
 
         Developer navin = new Developer();
         navin.devApp(lap);
