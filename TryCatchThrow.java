@@ -17,5 +17,26 @@ public class TryCatchThrow {
 
         System.out.println(j);
         System.out.println("Bye");
+
+        /**
+         * Custom exception
+         */
+        System.out.println();
+        TryCatchThrow obj = new TryCatchThrow();
+        obj.customException();
+    }
+
+    public void customException() {
+        try {
+            throw new NavinException("Calling custom exception 1 ");
+        } catch (NavinException e) {
+            System.out.println("Calling custom exception 2 " + e);
+        }
+    }
+}
+
+class NavinException extends Exception {
+    NavinException(String str) {
+        super(str);
     }
 }
