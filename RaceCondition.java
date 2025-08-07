@@ -38,8 +38,7 @@ public class RaceCondition {
         t2.join();
 
         /**
-         * thread.join() ensures
-         * next line will execute only affter thread has finished executing
+         * thread.join() ensures the main() thread waits for both to finish
          */
         System.out.println(c.count);
     }
